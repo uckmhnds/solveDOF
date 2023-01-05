@@ -1,0 +1,42 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      solveDOFDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+databaseFile	"eglinDB";
+altitude 	8500.;
+windDirection 	(1. 0. 0.);
+windMach	0.9;
+
+attitude 	(0. 0. 0.);
+centreOfMass    (0. 0. 0.);
+Ejector
+{
+
+}
+
+mass            100;
+
+inertia 	(40 0 0 0 921 0 0 0 921);
+momentOfInertia (40 921 921);
+
+report          on;
+
+solver
+{
+	type Newmark;
+}
+
+
+// ************************************************************************* //
